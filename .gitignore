@@ -7,3 +7,6 @@
 *.s#?
 *.b#?
 *.l#?
+
+# Eagle Project(s) file
+*.epf

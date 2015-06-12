@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -12476,7 +12476,7 @@ general purpose rectifier, 1 A</description>
 </classes>
 <parts>
 <part name="T1" library="transistor" deviceset="2N3440" device=""/>
-<part name="R1" library="resistor" deviceset="R-EU_" device="VMTB60"/>
+<part name="R1" library="resistor" deviceset="R-EU_" device="0207/10"/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="JP2" library="SparkFun-Connectors" deviceset="USB" device="PTH" value="USB-B"/>
 <part name="JP3" library="SparkFun-Connectors" deviceset="USB" device="PTH" value="USB-B"/>
@@ -12486,7 +12486,6 @@ general purpose rectifier, 1 A</description>
 <part name="SV1" library="con-amp-mt" deviceset="L02P" device=""/>
 <part name="SV2" library="con-amp-mt" deviceset="L02P" device=""/>
 <part name="OK2" library="optocoupler" deviceset="H11L*M" device="" technology="1"/>
-<part name="R2" library="resistor" deviceset="R-EU_" device="VMTB60"/>
 <part name="U$2" library="SRD-05VDC-SL-C" deviceset="RELAY" device="PTH"/>
 <part name="D1" library="diode" deviceset="1N4004" device=""/>
 </parts>
@@ -12508,7 +12507,6 @@ general purpose rectifier, 1 A</description>
 <instance part="SV2" gate="-1" x="-55.88" y="58.42"/>
 <instance part="SV2" gate="-2" x="-55.88" y="55.88"/>
 <instance part="OK2" gate="G$1" x="33.02" y="53.34"/>
-<instance part="R2" gate="G$1" x="111.76" y="33.02" rot="R90"/>
 <instance part="U$2" gate="G$1" x="127" y="0" rot="R180"/>
 <instance part="D1" gate="1" x="144.78" y="0" rot="R90"/>
 </instances>
@@ -12547,8 +12545,6 @@ general purpose rectifier, 1 A</description>
 <wire x1="20.32" y1="86.36" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
 <junction x="20.32" y="81.28"/>
 <wire x1="121.92" y1="30.48" x2="132.08" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="30.48" x2="152.4" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="30.48" x2="132.08" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
 <wire x1="-33.02" y1="86.36" x2="-33.02" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-33.02" y1="60.96" x2="-33.02" y2="58.42" width="0.1524" layer="91"/>
@@ -12564,6 +12560,12 @@ general purpose rectifier, 1 A</description>
 <wire x1="-33.02" y1="60.96" x2="-50.8" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-50.8" y1="60.96" x2="-50.8" y2="55.88" width="0.1524" layer="91"/>
 <junction x="-33.02" y="60.96"/>
+<wire x1="132.08" y1="30.48" x2="132.08" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="33.02" x2="132.08" y2="35.56" width="0.1524" layer="91"/>
+<junction x="132.08" y="35.56"/>
+<pinref part="JP4" gate="G$1" pin="4"/>
+<wire x1="152.4" y1="30.48" x2="132.08" y2="30.48" width="0.1524" layer="91"/>
+<junction x="132.08" y="30.48"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -12591,11 +12593,15 @@ general purpose rectifier, 1 A</description>
 <pinref part="C1" gate="G$1" pin="-"/>
 <junction x="132.08" y="43.18"/>
 <wire x1="116.84" y1="43.18" x2="132.08" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="111.76" y1="38.1" x2="116.84" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="JP4" gate="G$1" pin="1"/>
 <wire x1="132.08" y1="43.18" x2="152.4" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="43.18" x2="152.4" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="27.94" x2="116.84" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="27.94" x2="116.84" y2="0" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="SWCOMMON"/>
+<wire x1="119.38" y1="0" x2="116.84" y2="0" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="38.1" x2="111.76" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -12613,15 +12619,6 @@ general purpose rectifier, 1 A</description>
 <wire x1="139.7" y1="-5.08" x2="144.78" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="-5.08" x2="144.78" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="139.7" y="-5.08"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="111.76" y1="27.94" x2="116.84" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="27.94" x2="116.84" y2="0" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="SWCOMMON"/>
-<wire x1="119.38" y1="0" x2="116.84" y2="0" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
